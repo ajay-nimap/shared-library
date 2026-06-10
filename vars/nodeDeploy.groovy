@@ -11,14 +11,14 @@ def call() {
     }
 
     stage('Build Docker Image') {
-        sh 'docker build -t  ${imageName} .'
+        sh "docker build -t  ${imageName} ."
     }
 
     stage('Deploy') {
-        sh '''
+        sh """
             docker compose down || true
             docker compose up -d --build
-        '''
+        """
     }
 
   
