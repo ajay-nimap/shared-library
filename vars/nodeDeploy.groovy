@@ -11,7 +11,7 @@ def call() {
     }
 
     stage('Build Docker Image') {
-        sh 'docker build -t  $IMAGE_NAME .'
+        sh 'docker build -t  $imageName .'
     }
 
     stage('Deploy') {
